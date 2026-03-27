@@ -18,21 +18,54 @@ body{
 
 
 /*=============================PAGE ACCEUILLE============================*/
-#menu{
-    margin-top: 2vh;
+#menu {
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative; 
-    width: 100%;
+    gap: 2.8vw;
+    position: fixed;
+    top: 2vh;
+    left: 50%;
+    transform: translateX(-50%);
+    width: fit-content;
+    max-width: calc(100vw - 6vw);
+    padding: 1.15vh 2.4vw;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.04));
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow: none;
+    z-index: 1000;
+    opacity: 0;
+    animation: apparitionMenu 0.7s ease-out 0.1s forwards;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
 
+#menu.menuScrolled {
+    border-color: rgba(255, 255, 255, 0.16);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+    background: linear-gradient(135deg, rgba(35, 35, 35, 0.78), rgba(55, 55, 55, 0.2));
+}
 
+@keyframes apparitionMenu {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -3.5vh);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
 }
 
 nav ul{
     list-style-type: none;
     align-items: center;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3.4vw;
     padding: 0px;
     margin: 0px;
     font-size: 2vh;
@@ -40,8 +73,7 @@ nav ul{
 }
 nav ul li{
     display: inline-block;
-    margin-top: 1vh;
-    margin-left: 5vw;
+    margin: 0;
 }
 
 nav ul li a{
@@ -83,18 +115,18 @@ nav ul li a:hover {
 
 
 .containerAnglaisFR {
-    position: fixed;
-    right: 4vw;
+    position: relative;
     display: flex;
     align-items: center;
+    margin-left: 1.8vw;
 }
 
 
 .bouttonAnglaisFr {
-    width: 4vw;
-    height: 3.5vh;
+    width: 3.4vw;
+    height: 2.7vh;
     background-color: gray;
-    font-size: 2.2vh;
+    font-size: 1.7vh;
     border-radius: 15vh;
     cursor: pointer;
     position: relative;
@@ -105,13 +137,14 @@ nav ul li a:hover {
 .bouttonAnglaisFr::before {
     content: '';
     position: absolute;
-    top: 0.25vh;
-    left: 0.1vw;
-    width: 3vh;
-    height: 3vh;
+    top: 0.2vh;
+    left: 0.15vw;
+    width: 2.25vh;
+    height: 2.25vh;
     background-color: #fff;
     border-radius: 50%;
     transition: transform 0.3s ease;
+    z-index: 1002;
 }
 
 input:checked + .bouttonAnglaisFr {
@@ -119,7 +152,7 @@ input:checked + .bouttonAnglaisFr {
 }
 
 input:checked + .bouttonAnglaisFr::before {
-    transform: translateX(2.2vw);
+    transform: translateX(1.85vw);
 }
 
 
@@ -129,17 +162,45 @@ input:checked + .bouttonAnglaisFr::before {
 
 
 .buttonTexte{
-    font-size: 0.8vw;
-    position: relative;
+    font-size: 0.7vw;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ffffff;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 1001;
+    pointer-events: none;
 
+}
+
+#inputAnglaisFr + .bouttonAnglaisFr #texteFr{
+    opacity: 0;
+    visibility: hidden;
 }
 
 #texteEn{
-    margin-left: 1vw;
-    
+    right: 0.45vw;
 }
+
+#inputAnglaisFr + .bouttonAnglaisFr #texteEn{
+    opacity: 1;
+    visibility: visible;
+}
+
+#inputAnglaisFr:checked + .bouttonAnglaisFr #texteEn{
+    opacity: 0;
+    visibility: hidden;
+}
+
+#inputAnglaisFr:checked + .bouttonAnglaisFr #texteFr{
+    opacity: 1;
+    visibility: visible;
+}
+
 #texteFr{
-    margin-left: 0.5vw;
+    left: 0.45vw;
 }
 
 
@@ -149,6 +210,8 @@ input:checked + .bouttonAnglaisFr::before {
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 70%, rgb(18, 18, 18)  120%), 
     url('../../assets/projet2/fondProjet1.jpg') no-repeat center center;
     background-size: cover;
+    box-sizing: border-box;
+    padding-top: 10vh;
 
     display: flex;
     flex-direction: column;

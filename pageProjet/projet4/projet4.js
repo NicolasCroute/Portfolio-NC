@@ -27,6 +27,8 @@ function showSlides(n) {
   dots[slideIndex-1].className += " active";
 }
 
+let menuNavigation = document.getElementById("menu");
+
 
 
 
@@ -55,20 +57,51 @@ const elementsToTranslate = [
     }
 ];
 
+function corrigerTexte(texte) {
+    if (typeof texte !== "string") {
+        return texte;
+    }
+
+    if (/Ã|â|�/.test(texte)) {
+        try {
+            return decodeURIComponent(escape(texte));
+        } catch (error) {
+            return texte;
+        }
+    }
+
+    return texte;
+}
+
 // Fonction pour changer la langue
 function changeLanguage(language) {
     elementsToTranslate.forEach(item => {
         if (item.element) {
-            item.element.innerHTML = item[language];
+            item.element.innerHTML = corrigerTexte(item[language]);
         }
     });
 }
 
-// Définir la langue par défaut (anglais)
-changeLanguage('en');
+function changerEtatMenu() {
+    if (!menuNavigation) {
+        return;
+    }
+
+    if (window.scrollY > 10) {
+        menuNavigation.classList.add("menuScrolled");
+    } else {
+        menuNavigation.classList.remove("menuScrolled");
+    }
+}
+
+window.addEventListener("scroll", changerEtatMenu);
+changerEtatMenu();
 
 // Ajouter l'interactivité au bouton de changement de langue
 const languageToggle = document.getElementById("inputAnglaisFr");
+languageToggle.checked = true;
+changeLanguage('fr');
+
 languageToggle.addEventListener("change", () => {
     if (languageToggle.checked) {
         // Si le bouton est coché, changer en français

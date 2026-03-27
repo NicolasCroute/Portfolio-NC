@@ -1,4 +1,4 @@
-
+﻿
 
 html {
     scroll-behavior: smooth;
@@ -8,7 +8,7 @@ html {
 
 
 body{
-   
+
     background-color: rgb(12, 12, 12);
     color: white;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -24,30 +24,65 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative; 
-    width: 100%;
+    gap: 2.8vw;
+    position: fixed;
+    top: 2vh;
+    left: 50%;
+    transform: translateX(-50%);
+    width: fit-content;
+    max-width: calc(100vw - 6vw);
+    padding: 1.15vh 2.4vw;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.04));
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow: none;
+    z-index: 1000;
+    opacity: 0;
+    animation: apparitionMenu 0.7s ease-out 0.1s forwards;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+#menu.menuScrolled {
+    border-color: rgba(255, 255, 255, 0.16);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+    background: linear-gradient(135deg, rgba(35, 35, 35, 0.78), rgba(55, 55, 55, 0.2));
+}
+
+@keyframes apparitionMenu {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -3.5vh);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
 }
 
 nav ul{
     list-style-type: none;
     align-items: center;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3.4vw;
     padding: 0px;
     margin: 0px;
     font-size: 2vh;
-    
+
 }
 nav ul li{
     display: inline-block;
-    margin-top: 1vh;
-    margin-left: 5vw;
+    margin: 0;
 }
 
 nav ul li a{
     text-decoration: none;
     color: rgb(172, 172, 172);
     position: relative;
-    
+
 }
 
 nav ul li a::after {
@@ -55,23 +90,23 @@ nav ul li a::after {
     position: absolute;
     left: 0;
     right: 0;
-    bottom: -4px; 
-    height: 2px; 
-    background-color: #2272FF; 
-    transform: scaleX(0); 
+    bottom: -4px;
+    height: 2px;
+    background-color: #2272FF;
+    transform: scaleX(0);
     transform-origin: bottom right;
-    transition: transform 0.3s ease; 
+    transition: transform 0.3s ease;
 }
 
 nav ul li a:hover::after {
-    transform: scaleX(1); 
+    transform: scaleX(1);
     transform-origin: bottom left;
 
 }
 
 nav ul li a:hover {
     color: #ffffff;
-    
+
 }
 
 #liAnglaisFR{
@@ -82,18 +117,18 @@ nav ul li a:hover {
 
 
 .containerAnglaisFR {
-    position: fixed;
-    right: 4vw;
+    position: relative;
     display: flex;
     align-items: center;
+    margin-left: 1.8vw;
 }
 
 
 .bouttonAnglaisFr {
-    width: 4vw;
-    height: 3.5vh;
+    width: 3.4vw;
+    height: 2.7vh;
     background-color: gray;
-    font-size: 2.2vh;
+    font-size: 1.7vh;
     border-radius: 15vh;
     cursor: pointer;
     position: relative;
@@ -104,10 +139,10 @@ nav ul li a:hover {
 .bouttonAnglaisFr::before {
     content: '';
     position: absolute;
-    top: 0.25vh;
-    left: 0.1vw;
-    width: 3vh;
-    height: 3vh;
+    top: 0.2vh;
+    left: 0.15vw;
+    width: 2.25vh;
+    height: 2.25vh;
     background-color: #fff;
     border-radius: 50%;
     transition: transform 0.3s ease;
@@ -119,7 +154,7 @@ input:checked + .bouttonAnglaisFr {
 }
 
 input:checked + .bouttonAnglaisFr::before {
-    transform: translateX(2.2vw);
+    transform: translateX(1.85vw);
 }
 
 
@@ -129,17 +164,45 @@ input:checked + .bouttonAnglaisFr::before {
 
 
 .buttonTexte{
-    font-size: 0.8vw;
-    position: relative;
+    font-size: 0.7vw;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ffffff;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 1001;
+    pointer-events: none;
 
+}
+
+#inputAnglaisFr + .bouttonAnglaisFr #texteFr{
+    opacity: 0;
+    visibility: hidden;
+}
+
+#inputAnglaisFr + .bouttonAnglaisFr #texteEn{
+    opacity: 1;
+    visibility: visible;
+}
+
+#inputAnglaisFr:checked + .bouttonAnglaisFr #texteEn{
+    opacity: 0;
+    visibility: hidden;
+}
+
+#inputAnglaisFr:checked + .bouttonAnglaisFr #texteFr{
+    opacity: 1;
+    visibility: visible;
 }
 
 #texteEn{
-    margin-left: 1vw;
-    
+    right: 0.45vw;
+
 }
 #texteFr{
-    margin-left: 0.5vw;
+    left: 0.45vw;
 }
 
 
@@ -148,6 +211,7 @@ input:checked + .bouttonAnglaisFr::before {
 
 #titre{
     margin-left: 5vw;
+    margin-top: 7vh;
     height: 90vh;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -161,8 +225,8 @@ input:checked + .bouttonAnglaisFr::before {
     margin-bottom: 0px;
     font-size: 5vw;
     color: transparent;
-    background-image: linear-gradient(to left, #2272FF, #8a4aff, #ff2234); 
-    background-clip: text; 
+    background-image: linear-gradient(to left, #2272FF, #8a4aff, #ff2234);
+    background-clip: text;
     animation: animationTexte 5s linear infinite;
     background-size: 200%;
 
@@ -189,11 +253,11 @@ input:checked + .bouttonAnglaisFr::before {
 }
 
 #developpeurImage{
-    
+
     height: 50vh;
-    margin-top: 10vh; 
-    margin-left: 10vh; 
-    
+    margin-top: 10vh;
+    margin-left: 10vh;
+
 
     transform: translateY(0);
     animation: objetFlote 3s ease-in-out infinite;
@@ -222,7 +286,7 @@ input:checked + .bouttonAnglaisFr::before {
     padding: 2vh 4vw;
     cursor: pointer;
     background: linear-gradient(to left, #2272FF, #8a4aff, #ff2234);
-    
+
 
 }
 #cv a{
@@ -244,7 +308,7 @@ input:checked + .bouttonAnglaisFr::before {
     font-size: 6vh;
     text-align: center;
     position: relative;
-    
+
 }
 
 .partieTitreNumero{
@@ -262,7 +326,7 @@ input:checked + .bouttonAnglaisFr::before {
 
 
 #page1 {
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 70%, rgb(30, 30, 30)  120%), 
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 70%, rgb(30, 30, 30)  120%),
     url('assets/fond.jpg') no-repeat center center;
     background-size: cover;
     height: 100vh;
@@ -271,11 +335,11 @@ input:checked + .bouttonAnglaisFr::before {
     align-items: center;
     justify-content: center;
     position: relative;
-    
+
 }
 
 
-#menu, #titre {
+#titre {
     position: relative;
     z-index: 1;
 }
@@ -331,23 +395,23 @@ input:checked + .bouttonAnglaisFr::before {
 }
 
 #aProposIDContenue{
-    display: grid;   
+    display: grid;
     grid-template-columns: 1fr 1fr;
 }
 
 #aProposID #texteAPropos{
     text-align: justify;
     padding: 10vh;
-    
-    
+
+
 }
 
 #commentaire{
     font-family: 'Roboto Mono', monospace;
     margin-top: 50px;
-    color: transparent; 
-    background-image: linear-gradient(to left, #2272FF, #8a4aff, #ff2234); 
-    background-clip: text; 
+    color: transparent;
+    background-image: linear-gradient(to left, #2272FF, #8a4aff, #ff2234);
+    background-clip: text;
     animation: animationTexte 5s linear infinite;
     background-size: 200%;
 }
@@ -361,7 +425,7 @@ input:checked + .bouttonAnglaisFr::before {
 #imageSuitSouris{
     margin-left: 5vw;
     margin-top: 7vh;
-    
+
 }
 
 
@@ -378,7 +442,7 @@ input:checked + .bouttonAnglaisFr::before {
 #logoLinkedin{
     height: 8vh;
     margin-left: 10vw;
-    
+
 }
 
 #logoLinkedin:hover{
@@ -417,7 +481,7 @@ input:checked + .bouttonAnglaisFr::before {
 #titreSkill {
     color: #ffffff;
     margin-top: 1.5vh;
-    margin-bottom: 3vh; 
+    margin-bottom: 3vh;
     margin-left: 2vw;
     text-align: left;
     width: 40vw;
@@ -449,7 +513,7 @@ input:checked + .bouttonAnglaisFr::before {
 }
 
 .skill-box .title {
-    display: block;
+    display: inline-block;
     font-size: 15px;
     font-weight: 600;
     color: #ffffff;
@@ -470,34 +534,28 @@ input:checked + .bouttonAnglaisFr::before {
     width: 0;
     border-radius: 6px;
     background-color: #ffffff;
-    animation: progress 1.4s ease-in-out forwards;
     opacity: 1;
+    transition: width 1.4s ease-in-out;
 }
 
-.skill-per.html {
+.containerContainer.active .skill-per.html {
     width: 90%;
-    animation-delay: 0.1s;
+    transition-delay: 0.1s;
 }
 
-.skill-per.css {
-    width: 70%;
-    animation-delay: 0.15s;
-}
-
-.skill-per.csharp {
+.containerContainer.active .skill-per.postgres {
     width: 80%;
-    animation-delay: 0.2s;
+    transition-delay: 0.15s;
 }
 
-@keyframes progress {
-    0% {
-        width: 0;
-        opacity: 1;
-    }
-    100% {
+.containerContainer.active .skill-per.csharp {
+    width: 70%;
+    transition-delay: 0.2s;
+}
 
-        opacity: 1;
-    }
+.containerContainer.active .skill-per.uml {
+    width: 70%;
+    transition-delay: 0.25s;
 }
 
 .skill-per .tooltip {
@@ -691,29 +749,32 @@ input:checked + .bouttonAnglaisFr::before {
     display: grid;
     grid-template-columns: 1fr 1fr;
     margin-left: 6vh;
+    margin-right: 6vh;
 
 }
 
 .lienAutreProjet {
-    display: block;
+    display: inline-block;
     text-decoration: none;
-    position: relative; 
+    position: relative;
     z-index: 10;
     color: inherit;
- 
+    width: 41vw;
+
 }
-  
+
 .lienAutreProjet::after {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
-    width: 41vw;
+    width: 100%;
     height: 48vh;
     background-color: rgba(0, 0, 0, 0);
     transition: background-color 0.3s ease;
+    pointer-events: none;
 }
-  
+
 .lienAutreProjet:hover::after {
     background-color: rgba(0, 0, 0, 0.5);
 }
@@ -732,9 +793,10 @@ input:checked + .bouttonAnglaisFr::before {
 }
 
 .imageProjet{
-    
+    display: block;
     height: 48vh;
-    
+    width: 100%;
+    object-fit: cover;
 }
 
 .titreProjet{
@@ -764,7 +826,7 @@ input:checked + .bouttonAnglaisFr::before {
 }
 
 .logoOuvrir{
-    
+
     height: 3.5vh;
     margin-top: 2vh;
     justify-self: end;
@@ -786,21 +848,21 @@ input:checked + .bouttonAnglaisFr::before {
     margin-bottom: 10px;
 }
 
-                
+
 .projetDroite{
-    margin-right: 0vw;
-    margin-top: 30vh; 
+    margin-right: 0;
+    margin-top: 30vh;
     justify-self: end;
-    
+
 }
 
 
 
 .barreChangeProjetDroite{
     background-color: white;
-    
+    margin-left: 0;
     height: 0.5vh;
-    width: 43vw;
+    width: 44vw;
 
 }
 
@@ -872,26 +934,26 @@ input:checked + .bouttonAnglaisFr::before {
 
 #imageSuitSouris img{
     position: absolute;
-    
+
 }
 
 #imageSuitSouris1{
-    
+
     height: 28vh;
     filter: blur(3px);
     margin-top: 10px;
     opacity: 0.6;
-    
-    
-    
+
+
+
 }
 #imageSuitSouris2{
     height: 40vh;
     margin-top: 30px;
     margin-left: 80px;
     filter: blur(2px);
-    
-    
+
+
 }
 
 #imageSuitSouris3{
@@ -899,7 +961,7 @@ input:checked + .bouttonAnglaisFr::before {
     margin-top: 0px;
     margin-left: 160px;
     filter: blur(3px);
-    
+
 }
 
 #imageSuitSouris4{
@@ -927,8 +989,8 @@ input:checked + .bouttonAnglaisFr::before {
 }
 
 #formulaireContact input{
-    
-    display: block;
+
+    display: inline-block;
     width: 30vw;
     margin: 3vh 5vw;
     padding: 2vh;
@@ -940,7 +1002,7 @@ input:checked + .bouttonAnglaisFr::before {
 }
 
 #formulaireContact textarea{
-    display: block;
+    display: inline-block;
     width: 30vw;
     height: 5vh;
     margin: 3vh 5vw;
@@ -949,11 +1011,11 @@ input:checked + .bouttonAnglaisFr::before {
     border: 1px solid #2272FF;
     background-color: #1D1D1D;
     color: white;
-    
+
 }
 
 #butEnvoyer {
-    
+
     margin-top: 3vh;
     color: white;
     border: none;
@@ -972,4 +1034,4 @@ input:checked + .bouttonAnglaisFr::before {
     font-size: 1rem;
     font-weight: bold;
     text-align: center;
-} 
+}

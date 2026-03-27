@@ -1,4 +1,4 @@
-//=====================================================
+﻿//=====================================================
 //=======================A OPTIMISER===================
 //=====================================================
 
@@ -49,7 +49,7 @@ document.onmousemove = function (event){
     //====IMG1=======
     imageReact1.style.left = x1;
     imageReact1.style.top = y1;
-    
+
     //====IMG2=======
     imageReact2.style.left = x2;
     imageReact2.style.top = y2;
@@ -59,7 +59,7 @@ document.onmousemove = function (event){
     //====IMG4=======
     imageReact4.style.left = x4;
     imageReact4.style.top = y4;
-    
+
 }
 
 
@@ -68,6 +68,8 @@ document.onmousemove = function (event){
 //=============================ANGLAIS/FRANCAIS=========================
 //======================================================================
 let anglaisFrancais = document.getElementById("inputAnglaisFr");
+let lienCV = document.getElementById("lienCV");
+let menuNavigation = document.getElementById("menu");
 
 
 const elementsToTranslate = [
@@ -105,65 +107,65 @@ const elementsToTranslate = [
     { element: document.querySelectorAll(".titreProjet")[2], en: "Botanic Application | 2024", fr: "Application Botanic | 2024" },
     { element: document.querySelectorAll(".titreProjet")[3], en: "Database Creation | 2023", fr: "Création d'une BD | 2023" },
     { element: document.getElementById("butEnvoyer"), en: "Send", fr: "Envoyer" },
-    { 
-        element: document.querySelectorAll(".titreProjet")[4], 
-        en: "Seller | 2020", 
-        fr: "Vendeur | 2020" 
+    {
+        element: document.querySelectorAll(".titreProjet")[4],
+        en: "Seller | 2020",
+        fr: "Vendeur | 2020"
     },
-    { 
-        element: document.querySelectorAll(".textePartie")[4], 
-        en: "As a salesperson at Decathlon, I developed customer relationship skills, teamwork, and priority management while enhancing my attentiveness and service orientation.", 
-        fr: "En tant que vendeur chez Decathlon, j'ai développé mes compétences en relation client, travail d'équipe et gestion des priorités, tout en cultivant mon sens de l'écoute et du service." 
+    {
+        element: document.querySelectorAll(".textePartie")[4],
+        en: "As a salesperson at Decathlon, I developed customer relationship skills, teamwork, and priority management while enhancing my attentiveness and service orientation.",
+        fr: "En tant que vendeur chez Decathlon, j'ai développé mes compétences en relation client, travail d'équipe et gestion des priorités, tout en cultivant mon sens de l'écoute et du service."
     },
-    { 
-        element: document.querySelectorAll(".titreProjet")[5], 
-        en: "Techincal Industrial Worker | 2019", 
-        fr: "Travail dans le décolletage | 2019" 
+    {
+        element: document.querySelectorAll(".titreProjet")[5],
+        en: "Techincal Industrial Worker | 2019",
+        fr: "Travail dans le décolletage | 2019"
     },
-    { 
-        element: document.querySelectorAll(".textePartie")[5], 
-        en: "My experience at Bontaz in the field of turning allowed me to develop precision, rigor, and an understanding of complex industrial processes. It helped me to develop my independence and gave me my first taste of the world of work.", 
-        fr: "Mon expérience chez Bontaz dans le domaine du décolletage m'a permis de développer ma précision, ma rigueur et ma compréhension des processus industriels complexes. Cela m'as permis de développer mon autonomie et me donner un premier aperçu du monde du travail." 
+    {
+        element: document.querySelectorAll(".textePartie")[5],
+        en: "My experience at Bontaz in the field of turning allowed me to develop precision, rigor, and an understanding of complex industrial processes. It helped me to develop my independence and gave me my first taste of the world of work.",
+        fr: "Mon expérience chez Bontaz dans le domaine du décolletage m'a permis de développer ma précision, ma rigueur et ma compréhension des processus industriels complexes. Cela m'as permis de développer mon autonomie et me donner un premier aperçu du monde du travail."
     },
     { element: document.getElementById("etudeTitre"), en: "Education", fr: "Études" },
-    { 
-        element: document.getElementById("butInfo"), 
-        en: "<strong>2023 - 2025</strong><br><strong>BUT Informatique</strong><br>Technical Bachelor’s Degree in Computer Science - Second year in progress<br>University of Savoy / IUT Annecy - Annecy-le-Vieux, France", 
-        fr: "<strong>2023 - 2025</strong><br><strong>BUT Informatique</strong><br>Diplôme universitaire de technologie en informatique - Deuxième année en cours<br>Université de Savoie / IUT Annecy - Annecy-le-Vieux, France" 
+    {
+        element: document.getElementById("butInfo"),
+        en: "<strong>2023 - 2025</strong><br><strong>BUT Informatique</strong><br>Technical Bachelor’s Degree in Computer Science - Second year in progress<br>University of Savoy / IUT Annecy - Annecy-le-Vieux, France",
+        fr: "<strong>2023 - 2025</strong><br><strong>BUT Informatique</strong><br>Diplôme universitaire de technologie en informatique - Deuxième année en cours<br>Université de Savoie / IUT Annecy - Annecy-le-Vieux, France"
     },
-    { 
-        element: document.getElementById("baccalaureate"), 
-        en: "<strong>2020-2023</strong><br><strong>French General Baccalaureate</strong><br>High School diploma specialized in science (mathematics/physics) with honors<br>Saint Jean Bosco High School - Cluses, France", 
-        fr: "<strong>2020-2023</strong><br><strong>Baccalauréat Général Français</strong><br>Diplôme de fin d’études secondaires spécialisé en sciences (mathématiques/physique) avec mention<br>Lycée Saint Jean Bosco - Cluses, France" 
+    {
+        element: document.getElementById("baccalaureate"),
+        en: "<strong>2020-2023</strong><br><strong>French General Baccalaureate</strong><br>High School diploma specialized in science (mathematics/physics) with honors<br>Saint Jean Bosco High School - Cluses, France",
+        fr: "<strong>2020-2023</strong><br><strong>Baccalauréat Général Français</strong><br>Diplôme de fin d’études secondaires spécialisé en sciences (mathématiques/physique) avec mention<br>Lycée Saint Jean Bosco - Cluses, France"
     },
-    { 
-        element: document.getElementById("referencesTitre"), 
-        en: "References", 
-        fr: "Références" 
+    {
+        element: document.getElementById("referencesTitre"),
+        en: "References",
+        fr: "Références"
     },
-    { 
-        element: document.querySelectorAll(".reference")[0], 
+    {
+        element: document.querySelectorAll(".reference")[0],
         en: `<strong>Luc DAMAS</strong><br>
              Programming Associate Professor<br>
              University of Savoy / IUT Annecy - France<br>
-             <strong>Email :</strong> luc.damas@univ-smb.fr`, 
+             <strong>Email :</strong> luc.damas@univ-smb.fr`,
         fr: `<strong>Luc DAMAS</strong><br>
              Professeur de programmation<br>
              Université de Savoie / IUT Annecy - France<br>
              <strong>Email :</strong> luc.damas@univ-smb.fr`
     },
-    { 
-        element: document.querySelectorAll(".reference")[1], 
+    {
+        element: document.querySelectorAll(".reference")[1],
         en: `<strong>Stéphanie VIBRAC</strong><br>
              English Lecturer, International Coordinator<br>
              University of Savoy / IUT Annecy - France<br>
-             <strong>Email :</strong> vibrac.stephanie@univ-smb.fr`, 
+             <strong>Email :</strong> vibrac.stephanie@univ-smb.fr`,
         fr: `<strong>Stéphanie VIBRAC</strong><br>
              Enseignante d'anglais, Coordinatrice internationale<br>
              Université de Savoie / IUT Annecy - France<br>
              <strong>Email :</strong> vibrac.stephanie@univ-smb.fr`
     }
-    
+
 ];
 
 // Fonction pour changer la langue
@@ -173,6 +175,12 @@ function changeLanguage(toFrench) {
             element.innerHTML = toFrench ? fr : en; // Utilise innerHTML pour interpréter le HTML
         }
     });
+
+    if (lienCV) {
+        let fichierCV = toFrench ? "assets/CV_CROUTE_Nicolas_FR.pdf" : "assets/CV_CROUTE_Nicolas_EN.pdf";
+        lienCV.href = fichierCV;
+
+    }
 }
 
 // Écouteur sur la case à cocher
@@ -180,8 +188,48 @@ anglaisFrancais.addEventListener('change', () => {
     changeLanguage(anglaisFrancais.checked);
 });
 
-// Par défaut, la page est en anglais
-changeLanguage(false);
+// Par défaut, la page est en français
+anglaisFrancais.checked = true;
+changeLanguage(true);
+
+
+//================ETAT MENU FIXE======================
+function changerEtatMenu() {
+    if (!menuNavigation) {
+        return;
+    }
+
+    if (window.scrollY > 10) {
+        menuNavigation.classList.add("menuScrolled");
+    } else {
+        menuNavigation.classList.remove("menuScrolled");
+    }
+}
+
+window.addEventListener("scroll", changerEtatMenu);
+changerEtatMenu();
+
+
+//================ANIMATION SKILLS======================
+let containerSkills = document.querySelector(".containerContainer");
+let animationSkillsLancee = false;
+
+function lancerAnimationSkills() {
+    if (!containerSkills || animationSkillsLancee) {
+        return;
+    }
+
+    let positionSkills = containerSkills.getBoundingClientRect();
+
+    if (positionSkills.top < window.innerHeight * 0.8 && positionSkills.bottom > 0) {
+        containerSkills.classList.add("active");
+        animationSkillsLancee = true;
+        window.removeEventListener("scroll", lancerAnimationSkills);
+    }
+}
+
+window.addEventListener("scroll", lancerAnimationSkills);
+lancerAnimationSkills();
 
 
 
@@ -209,7 +257,7 @@ document.getElementById("contactForm").addEventListener("submit", function(event
     .then(response => response.json())
     .then(data => {
         if (data.success) {
-            messageStatus.textContent = "Votre message a été envoyé avec succès !";
+            messageStatus.textContent = "Votre message a été envoyé avec succès !";
             messageStatus.style.color = "green";
             form.reset(); // Réinitialise le formulaire
         } else {
@@ -220,6 +268,6 @@ document.getElementById("contactForm").addEventListener("submit", function(event
     .catch(error => {
         messageStatus.textContent = "Erreur de connexion. Veuillez réessayer.";
         messageStatus.style.color = "red";
-        console.error("Erreur :", error);
+        console.error("Erreur :", error);
     });
 });
