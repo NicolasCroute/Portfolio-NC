@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>projet3Portfolio</title>
+    <link rel="stylesheet" href="projet3.css">
+    <link rel="icon" href="../../assets/logoPortfolio.png">
+</head>
+<body>
+    <div id="page1">
+        <nav id="menu">
+            <ul>
+                <li><a href="../../index.html#aProposID" id="AproposENid">À propos</a></li>
+                <li><a href="../../index.html#projetID" id="ProjetENid">Projet</a></li>
+                <li><a href="../../index.html#experienceID" id="CompetenceENid">Expériences</a></li>
+                <li><a href="../../index.html#contactID" id="ContantENid">Contact</a></li>
+            </ul>
+            
+
+
+            <div class="containerAnglaisFR">
+                <input type="checkbox" id="inputAnglaisFr">
+                <label for="inputAnglaisFr" class="bouttonAnglaisFr">
+                    <span class="buttonTexte" id="texteFr">FR</span>
+                    <span class="buttonTexte" id="texteEn">EN</span>
+                </label>
+            </div>
+            
+        </nav>
+    
+        <div id="titreProjet">
+            <img src="../../assets/projet3/botanicPC.png" alt="imagePCphaser" id="imageIntroPCProjet">
+            <h1 id="titreProjet1">Application Botanic</h1>
+        </div>
+    </div>
+    <div id="Texte">
+        <p>Application développée pour le groupe Botanic, permettant aux salariés de gérer les commandes via une interface intuitive et sécurisée. Elle inclut une page de connexion, des filtres avancés pour rechercher des produits, l’ajout de produits à une commande avec gestion des quantités et du transport, ainsi qu’un suivi des commandes validées. Réalisé en binôme, ce projet a mobilisé des compétences en C#, WPF et gestion de bases de données.</p>
+    </div>
+    
+
+
+    <!-- Slideshow container -->
+    <div class="slideshow-container">
+
+        <!-- Full-width images with number and caption text -->
+        <div class="mySlides fade">
+        <div class="numbertext">1 / 2</div>
+        <img src="../../assets/projet3/botanicImage.png" style="width:100%">
+
+        </div>
+    
+        <div class="mySlides fade">
+        <div class="numbertext">1 / 2</div>
+        <img src="../../assets/projet3/botanicWPF.png" style="width:100%">
+        </div>
+    
+        
+        <!-- Next and previous buttons -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <br>
+    
+    <!-- The dots/circles -->
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+
+    <script src="projet3.js" defer></script>
+</body>
+</html>

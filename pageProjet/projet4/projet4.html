@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="projet4.css">
+    <link rel="icon" href="../../assets/logoPortfolio.png">
+    <title>projet4Portfolio</title>
+</head>
+<body>
+    <div id="page1">
+        <nav id="menu">
+            <ul>
+                <li><a href="../../index.html#aProposID" id="AproposENid">À propos</a></li>
+                <li><a href="../../index.html#projetID" id="ProjetENid">Projet</a></li>
+                <li><a href="../../index.html#experienceID" id="CompetenceENid">Expériences</a></li>
+                <li><a href="../../index.html#contactID" id="ContantENid">Contact</a></li>
+            </ul>
+            
+
+
+            <div class="containerAnglaisFR">
+                <input type="checkbox" id="inputAnglaisFr">
+                <label for="inputAnglaisFr" class="bouttonAnglaisFr">
+                    <span class="buttonTexte" id="texteFr">FR</span>
+                    <span class="buttonTexte" id="texteEn">EN</span>
+                </label>
+            </div>
+            
+        </nav>
+    
+        <div id="titreProjet">
+            <img src="../../assets/projet4/scodocPC.png" alt="imagePCphaser" id="imageIntroPCProjet">
+            <h1 id="titreProjet1">Création d'une BD</h1>
+        </div>
+    </div>
+    <div id="Texte">
+        <p>Ce projet visait à concevoir une solution complète pour la gestion des notes dans le système Scodoc. Mon rôle a consisté à modéliser l’ensemble du système, créer la base de données, et fournir une visualisation des données via un rapport interactif Power BI.
+            <br>
+            <br>J’ai réalisé la modélisation à travers des diagrammes UML (use case, diagramme de classe) pour structurer les besoins fonctionnels et les relations entre les entités. Une base de données relationnelle a ensuite été conçue pour stocker et gérer efficacement les données des étudiants et de leurs notes.
+            <br>
+            <br>Enfin, un tableau de bord Power BI a été créé, permettant une visualisation claire et interactive des données : statistiques sur les performances des étudiants, taux de réussite, et suivi des moyennes par matière ou promotion. Ce projet m’a permis de développer mes compétences en modélisation, conception de bases de données et reporting avancé.</p>
+    </div>
+
+
+    <!-- Slideshow container -->
+    <div class="slideshow-container">
+
+        <!-- Full-width images with number and caption text -->
+        <div class="mySlides fade">
+        <div class="numbertext">1 / 3</div>
+        <img src="../../assets/projet4/MCDProjet4.png" style="width:100%">
+
+        </div>
+    
+        <div class="mySlides fade">
+        <div class="numbertext">2 / 3</div>
+        <img src="../../assets/projet4/insertProjet4.png" style="width:100%">
+        </div>
+    
+        <div class="mySlides fade">
+        <div class="numbertext">3 / 3</div>
+        <img src="../../assets/projet4/rapportPowerBI.png" style="width:100%">
+        </div>
+    
+        <!-- Next and previous buttons -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <br>
+    
+    <!-- The dots/circles -->
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+
+    <script src="projet4.js" defer></script>
+</body>
+</html>

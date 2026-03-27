@@ -1,0 +1,282 @@
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+
+body{
+   
+    background-color: rgb(12, 12, 12);
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 200vh;
+    margin: 0;
+    padding: 0;
+    font-size: 2vh;
+}
+
+
+
+/*=============================PAGE ACCEUILLE============================*/
+#menu{
+    margin-top: 2vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative; 
+    width: 100%;
+
+
+}
+
+nav ul{
+    list-style-type: none;
+    align-items: center;
+    display: flex;
+    padding: 0px;
+    margin: 0px;
+    font-size: 2vh;
+    
+}
+nav ul li{
+    display: inline-block;
+    margin-top: 1vh;
+    margin-left: 5vw;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: rgb(172, 172, 172);
+    position: relative;
+    
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -4px; 
+    height: 2px; 
+    background-color: #2272FF; 
+    transform: scaleX(0); 
+    transform-origin: bottom right;
+    transition: transform 0.3s ease; 
+}
+
+nav ul li a:hover::after {
+    transform: scaleX(1); 
+    transform-origin: bottom left;
+
+}
+
+nav ul li a:hover {
+    color: #ffffff;
+    
+}
+
+#liAnglaisFR{
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+
+.containerAnglaisFR {
+    position: fixed;
+    right: 4vw;
+    display: flex;
+    align-items: center;
+}
+
+
+.bouttonAnglaisFr {
+    width: 4vw;
+    height: 3.5vh;
+    background-color: gray;
+    font-size: 2.2vh;
+    border-radius: 15vh;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.3s ease;
+}
+
+
+.bouttonAnglaisFr::before {
+    content: '';
+    position: absolute;
+    top: 0.25vh;
+    left: 0.1vw;
+    width: 3vh;
+    height: 3vh;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+input:checked + .bouttonAnglaisFr {
+    background-color: #2272FF;
+}
+
+input:checked + .bouttonAnglaisFr::before {
+    transform: translateX(2.2vw);
+}
+
+
+#inputAnglaisFr {
+    display: none;
+}
+
+
+.buttonTexte{
+    font-size: 0.8vw;
+    position: relative;
+
+}
+
+#texteEn{
+    margin-left: 1vw;
+    
+}
+#texteFr{
+    margin-left: 0.5vw;
+}
+
+
+/*================IMAGE FOND===================*/
+
+#page1 {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 70%, rgb(18, 18, 18)  120%), 
+    url('../../assets/projet2/fondProjet1.jpg') no-repeat center center;
+    background-size: cover;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    
+}
+
+
+
+
+
+/*==============IMAGE=========================*/
+
+
+
+#titreProjet{
+    display: grid;   
+    grid-template-columns: 1fr 1fr;
+}
+
+#imageIntroPCProjet{
+    height: 80vh;
+}
+
+
+#titreProjet1{
+    margin-left: 6vw;
+    margin-top: 17vh;
+    font-size: 12vh;
+}
+
+
+/*=============Texte===============*/
+
+#Texte{
+    margin: 15vh;
+    text-align: justify;
+}
+
+
+/*=============CARROUSSELLE==============*/
+* {box-sizing:border-box}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
