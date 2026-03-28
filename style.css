@@ -914,6 +914,21 @@ input:checked + .bouttonAnglaisFr::before {
     height: 120vh;
 }
 
+#partieExperience #differentProjet {
+    margin-right: 0;
+}
+
+#partieExperience .projetDroite {
+    width: 44vw;
+    padding-right: 0;
+    margin-right: 2vw;
+    box-sizing: border-box;
+}
+
+#partieExperience .projetDroite .barreChangeProjetDroite {
+    width: calc(100% + 2vw);
+}
+
 
 
 
